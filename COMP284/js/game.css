@@ -1,0 +1,172 @@
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #fff6f0;
+    line-height: 24px
+}
+
+#container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* src: https://www.peakpx.com/ */
+    background: url("assets/bg.jpg");
+    background-size: cover;
+}
+
+
+#info_area {
+    position: relative;
+    float: left;
+    margin-left: 5%;
+    height: 100%;
+    width: 30%;
+}
+
+.card {
+    margin-left: 1em;
+    margin-right: 1em;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, .2);
+    -webkit-backdrop-filter: blur(px);
+    backdrop-filter: blur(0.01px);
+}
+
+#const_info{
+    position:relative;
+    margin-left: 6.5em;
+}
+
+#guide_info {
+    position: relative;
+    margin-left: 4.5em;
+    margin-right: 1.5em;
+}
+
+#game_info {
+    position: relative;
+    margin-left: 5.5em;
+    margin-right: 5.5em;
+}
+
+#alert_info{
+    position: relative;
+    height: 4em;
+    margin-left: 3.5em;
+    margin-right: 3em;
+}
+
+#game_area {
+    position: relative;
+    float: left;
+    margin-left: 5%;
+    height: 100%;
+    width: 50%;
+}
+
+h1{
+    position:relative;
+    text-align: center;
+}
+
+h3,h5 {
+    position: relative;
+    text-align: center;
+}
+
+#game_info {
+    position: relative;
+    text-align: left;
+}
+
+
+#table_box{
+    position: relative;
+    width: 100%;
+}
+
+#grid{
+    position: relative;
+    margin-left: 12.5%;
+}
+
+td {
+    border: 1px solid rgb(169, 223, 255);
+    width: 3em;
+    height: 3em;
+    margin: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td:hover {
+    background: rgb(120, 120, 120);
+    opacity: 0.3;
+}
+
+img {
+    width: 3em;
+    height: 3em;
+    margin: 0em;
+    vertical-align: middle;
+}
+
+#user_move{
+    position: relative;
+    margin-left: 25%;
+}
+
+#comp_move {
+    position: relative;
+    margin-left: 25%;
+}
+
+#direction {
+    position: relative;
+    background: transparent;
+    border: 1px solid rgb(197, 230, 255);
+    color: rgb(197, 230, 255);
+    font-size: 15px;
+    height: 40px;
+    width: 3em;
+    border-radius: 20px;
+    box-shadow: 0 9px #999;
+    text-align: center;
+}
+
+#operator_box {
+    position: relative;
+    width: 100%;
+    margin-top: 2%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    height: 40px;
+    width: auto;
+    margin-top: 1em;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #d52c4c;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 9px #999;
+}
+
+
+.btn:hover {
+    background-color: #e2515e
+}
+
+.btn:active {
+    background-color: #d52c4c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COMP284 Game</title>
+    <link rel="stylesheet" type="text/css" href="game.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="info_area">
+        <h1 id="borad_title">Game Board</h1>
+
+        <h3 id="info_title">Status Box</h3>
+        <div class="card">
+          <div id="guide_info"></div>
+          <div id="game_info"></div>
+        </div>
+        <br />
+
+        <h3 id="alert_title">Alert Box</h3>
+        <div class="card">
+          <div id="alert_info"></div>
+        </div>
+        <br />
+
+        <h3 id="info_title">Game Info</h3>
+        <div class="card">
+          <div id="const_info">
+            <!-- src: https://www.pngitem.com/middle/owTToh_transparent-cartoon-spaceship-png-cartoon-ufo-no-background/ -->
+            <img src="assets/U.png" alt="U" /> : User Spaceship<br />
+            <!-- src: https://toppng.com/free-image/free-to-use-public-domain-flying-saucer-clip-art-cartoon-aliens-in-spaceships-PNG-free-PNG-Images_198245 -->
+            <img src="assets/R.png" alt="R" /> : Robotic Spaceship<br />
+            <!-- src: https://cn.clipartlogo.com/istock/illustration-of-cartoon-asteroids-in-different-colors-for-a-game-1739868.html -->
+            <img src="assets/A.png" alt="A" /> : Asteroid<br />
+            <!-- src: https://pngtree.com/freepng/vector-flat-cartoon-bomb-explosion_5765321.html -->
+            <img src="assets/UM.png" alt="UM" /> : Inactive Mine<br />
+            <!-- src: https://pngtree.com/freepng/vector-flat-cartoon-bomb-explosion_5765321.html -->
+            <img src="assets/AM.png" alt="AM" />: Active Mine<br /><br />
+          </div>
+        </div>
+      </div>
+
+      <div id="game_area">
+        <h1 id="title">Space War</h1>
+        <h3 id="stage"></h3>
+
+        <div id="table_box">
+          <table id="grid"></table>
+        </div>
+
+        <div id="operator_box">
+          <button class="btn" id="startBtn" onclick="checkSetup()">Start</button>
+          <input id="direction" type="text" />
+          <button class="btn" id="moveUserBtn" onclick="userPlay()">Move</button>&emsp;&emsp;&emsp;
+          <button class="btn" id="exitBtn" onclick="exitGame()">Exit Game</button>
+          <button class="btn" id="restartBtn" onclick="location.reload()">Play again</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
