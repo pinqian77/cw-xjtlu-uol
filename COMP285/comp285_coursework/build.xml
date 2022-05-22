@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<project name="shapes" basedir="." > 
+	<property name="src.dir" location="src"/> 
+	<property name="test.dir" location="test"/>
+	<property name="test.src.dir" location="src/uk/ac/liv/comp285/cw1/test"/>
+
+	<property name="build.dir" location="build"/>
+	<property name="build.class.dir" location="build/classes"/>
+	<property name="test.reports.dir" location="test/reports"/>
+	<property name="test.data.dir" location="test/data"/>
+
+
+	<target name="init">
+		<mkdir dir="${test.dir}"/>
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.class.dir}"/>
+		<mkdir dir="${test.reports.dir}"/>
+		<mkdir dir="${test.data.dir}"/>
+
+		<path id="test.classpath">
+			<fileset dir="lib" includes="**/*.jar"/>
+			<pathelement path="${build.class.dir}"/>		
+		</path>
+	</target>
+
+
+	<target name="compile" depends="init"  >		
+		<javac srcdir="src" destdir="${build.class.dir}" includeantruntime="no">
+			<classpath refid="test.classpath"/>
+		</javac>
+	</target>
+
+	
+	<target name="test-compile" depends="compile">	
+		<javac srcdir="${test.src.dir}" destdir="${build.class.dir}" includeantruntime="no">
+			<classpath refid="test.classpath"/>
+		</javac>
+	</target>
+
+	
+	<target name="test" depends="test-compile">
+		<junit printsummary="no" haltonfailure="no" errorProperty="test.failed" failureProperty="test.failed">
+			<classpath refid="test.classpath"/>
+
+			<formatter type="brief" usefile="false"/>
+			<formatter type="xml"/>
+
+			<batchtest todir="${test.data.dir}">
+				<fileset dir="${build.class.dir}" includes="**/*Test.class"/>
+			</batchtest>
+		</junit>
+
+		<junitreport todir="${test.data.dir}">
+			<fileset dir="${test.data.dir}" includes="TEST-*.xml"/>
+			<report format="frames" todir="${test.reports.dir}"/>
+		</junitreport>
+
+		<fail message="Tests failed. Check log and/or reports." if="test.failed"/>
+	</target>
+
+
+	<target name="clean" depends="init">
+		<delete dir="${test.reports.dir}" />
+		<delete dir="${build.class.dir}" />	 
+		<delete dir="${test.data.dir}" />
+	</target>
+</project>
